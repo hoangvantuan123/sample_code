@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Liệt kê các thẻ liên kết</title>
+    <style>
+        /* Thêm style cho danh sách thẻ liên kết */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Thiết lập style cho danh sách con */
+        ul.sublist {
+            margin-left: 20px;
+        }
+        li.sublist-item {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Backend Django Rest API</h1>
+    <ul>
+        <li><a href="http://127.0.0.1:8000/admin">admin</a></li>
+    </ul>
+    <ul>
+        <li> <a>API</a>
+            <ul class="sublist">
+                <li class="sublist-item"><a href="http://127.0.0.1:8000/reactapi/">reactapi</a></li>
+                <li class="sublist-item"><a href="">a</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
