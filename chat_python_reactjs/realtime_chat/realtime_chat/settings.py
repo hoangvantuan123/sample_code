@@ -44,12 +44,17 @@ INSTALLED_APPS = [
 ASGI_APPLICATION = 'realtime_chat.routing.application'
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',  # Backend sử dụng In-memory
+        'CONFIG': {},
+    },
+    'redis': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',  # Backend sử dụng Redis
         'CONFIG': {
             'hosts': [('localhost', 6379)],
         },
     },
 }
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

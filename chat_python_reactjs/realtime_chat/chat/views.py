@@ -104,8 +104,10 @@ def add_member(request, group_id):
         if member_id in group.members:
             return Response({'error': 'Member already exists in the group'}, status=400)
 
-        # Thêm thành viên mới vào nhóm và lưu lại
-        group.members.append(member_id)
+        # Trích xuất giá trị JSON, thêm thành viên mới và lưu trở lại
+        members = group.members
+        members.append(member_id)
+        group.members = members
         group.save()
 
         return Response({'status': 'success'})
